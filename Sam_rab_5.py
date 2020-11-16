@@ -1,12 +1,12 @@
 class Value:
-    def __init__(self, amount=0):
-        self.amount = amount
+    def __init__(self, val=0):
+        self.val = val
 
     def __get__(self, obj, obj_type):
-        return int(self.amount)
+        return int(self.val)
 
     def __set__(self, obj, value):
-        self.amount = value - value * obj.commission
+        self.val = value - value * obj.commission
 
 class Account:
     amount = Value()
